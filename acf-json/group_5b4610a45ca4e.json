@@ -1,0 +1,66 @@
+{
+    "key": "group_5b4610a45ca4e",
+    "title": "Icons",
+    "fields": [
+        {
+            "key": "field_5b4610ab632ad",
+            "label": "Icon",
+            "name": "icon",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "icon-bulb": "Bulb",
+                "icon-clipboard": "Clipboard",
+                "icon-clock": "Clock",
+                "icon-conversion": "Conversion",
+                "icon-cube": "Cube",
+                "icon-graph": "Graph",
+                "icon-dollars": "Dollars",
+                "icon-exclamation": "Exclamation",
+                "icon-inbox": "Inbox",
+                "icon-inbox-star": "Inbox w\/ Star",
+                "icon-molecule": "Molecule",
+                "icon-printer": "Printer",
+                "icon-scan": "Scanner",
+                "icon-search-docs": "Search",
+                "icon-shield": "Shield",
+                "icon-stack": "Stack",
+                "icon-stack-v": "Stack Vertical"
+            },
+            "default_value": [
+                "icon-shield"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "This houses all the icon options. Other 'Icon' fields are clones of this",
+    "modified": 1531318866
+}

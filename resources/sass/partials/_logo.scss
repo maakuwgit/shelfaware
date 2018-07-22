@@ -1,0 +1,30 @@
+/**
+ * Logo styles
+ */
+
+.logo {
+}
+
+.logo--header {
+
+}
+
+.logo-svg {
+  width: rem-calc(124);
+  height: rem-calc(50);
+
+  @include screen-xl-up {
+    > g  {
+      transform: scale(1.25);
+    }
+  }
+}
+
+.logo__brand {
+  display: flex;
+  z-index: 2;
+  font-size: rem-calc(28);
+  font-weight: $text-bold;
+  fill: $white;
+  color: $white;
+}

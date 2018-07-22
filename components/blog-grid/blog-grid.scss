@@ -1,0 +1,56 @@
+/**
+ * blog-grid Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-blog-grid {
+  padding-top: $padding-medium;
+  padding-bottom: $padding-medium + $padding-small;
+
+  @include screen-lg-up {
+    padding-top: $padding-large;
+    padding-bottom: $padding-large + $padding-medium;
+  }
+
+  .blog-grid__posts {
+    width: calc( 100% + #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding * -1;
+  }
+
+  .blog-grid__blog {
+    @extend %card;
+    padding-left: $padding-xsmall;
+    padding-right: $padding-xsmall;
+
+    .blog-grid__blog__title {
+      @extend %card__title;
+      &:first-child {
+        margin-top: rem-calc(183);
+      }
+    }
+
+    .blog-grid__blog__body {
+      @extend %card__body;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .blog__excerpt__more {
+      @extend %card__cta;
+    }
+
+    .blog-grid__blog__feature__wrapper {
+      width: calc(100% + #{$padding-xsmall * 2});
+      min-height: 200px;
+      height: calc( 33.3334vw/2 - #{$padding-small} );
+      margin: #{$padding-small * -1} #{$padding-xsmall * -1} auto #{$padding-xsmall * -1};
+    }
+
+  }
+
+}

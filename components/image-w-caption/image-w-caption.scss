@@ -1,0 +1,43 @@
+/**
+ * image-w-caption Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-image-w-caption {
+  position: relative;
+  @extend %section-padding;
+
+  .image-w-caption__wrap {
+    height: 85vh;
+  }
+
+  .image-w-caption__caption {
+    padding-top: $padding-medium;
+
+    h2, h3, h4, h5, h6 {
+      color: $white;
+    }
+
+    h2, .h2 {
+      font-size: rem-calc(25);
+      font-weight: $text-bold;
+      line-height: 40px;
+      line-height: 1.6;
+    }
+
+    p, li, dd {
+      line-height: 26px;
+      line-height: 1.625;
+
+      &:last-child {
+        margin-bottom: auto;
+      }
+
+    }
+
+  }
+
+}

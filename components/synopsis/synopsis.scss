@@ -1,0 +1,87 @@
+/**
+ * synopsis Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-synopsis {
+  @extend %section-padding;
+
+  .synopsis__wrapper {
+    @extend %card;
+    padding: rem-calc(22);
+    margin-top: $padding-xsmall;
+    margin-bottom: $padding-xsmall;
+    color: #3f3f3f;
+  }
+
+  .synopsis__header {
+    margin-top: rem-calc(20);
+    margin-bottom: $padding-xsmall;
+    font-size: rem-calc(24);
+    color: $ebony;
+  }
+
+  @include screen-sm {
+    .synopsis__wrapper {
+      flex-direction: column;
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
+  @include screen-md-up {
+
+    .synopsis__header {
+      margin-top: rem-calc(40);
+      margin-bottom: auto;
+      padding-bottom: rem-calc(8);
+      font-size: rem-calc(40);
+      line-height: 50px;
+      line-height: 1.25;
+    }
+
+    .synopsis__description {
+      padding-top: rem-calc(33);
+      padding-bottom: rem-calc(33);
+
+      li {
+        padding-bottom: rem-calc(12);
+        font-size: rem-calc(18);
+        line-height: 26px;
+        line-height: 1.44444444444444;
+      }
+    }
+  }
+
+
+  .synopsis__description {
+
+    p {
+      margin-top: 0;
+      color: #676977;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      padding-bottom: rem-calc(10);
+      font-size: rem-calc(16);
+      font-weight: $text-bold;
+      color: #5150cc;
+      line-height: 1.25;
+    }
+
+  }
+
+}

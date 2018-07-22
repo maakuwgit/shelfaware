@@ -1,0 +1,272 @@
+/**
+ * Base styles
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100vh;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include screen-xl-up {
+    font-size: 125%;
+  }
+}
+
+body {
+  color: $text-color;
+  background-color: $midnight;
+  background-image: url(../img/background.png), linear-gradient(180deg, $midnight 0%, #101554 100%);
+  background-size: auto 100vh, contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  font-size: 16px;
+  font-size: rem-calc(16);
+  line-height: 28px;
+  line-height: 1.75;
+
+  @include screen-md-up {
+    background-size: cover, contain;
+    background-attachment: fixed, scroll;
+  }
+
+  /**
+   * Set after content to use for easily checking
+   * mobile or desktop state. Hidden from view and
+   * screen readers because it's purely for javascript.
+   * Check app.js for more info
+   */
+  &::after {
+    content: 'desktop';
+    display: none;
+
+    @include screen-nav-mobile {
+      content: 'mobile';
+    }
+  }
+}
+
+::selection {
+  text-shadow: none;
+  color: $selection;
+  background: $selection-bg;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  color: $selection;
+  background: $selection-bg;
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  position: relative;
+  font-size: rem-calc(20);
+  font-weight: $text-light;
+
+  p {
+    margin: 0 auto auto;
+    font-weight: inherit;
+    font-size: inherit;
+    &:before {
+      content: "“";
+      margin-left: rem-calc(-6);
+    }
+    &:after {
+      content: "”";
+    }
+  }
+
+  cite {
+    font-size: rem-calc(16);
+    font-weight: $text-bold;
+    font-style: normal;
+  }
+
+}
+
+code {
+  white-space: normal;
+}
+
+form {
+  flex: 0 1 auto;
+  width: 100%;
+  align-self: flex-start;
+}
+
+hr {
+  background-color: rgba($aquamarine, 0.1);
+  width: 80%;
+  margin-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input {
+  &[type="text"],
+  &[type="date"],
+  &[type="email"] {
+   @include input_base;
+  }
+
+  @include placeholder-text {
+    font-weight: $text-bold;
+    color: $ebony;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type="checkbox"] {
+    display: inline-flex;
+    appearance: none;
+    margin-right: rem-calc(13);
+    height: rem-calc(19);
+    width: rem-calc(19);
+    border: #{rem-calc(2)} solid rgba(#979797, 0.5);
+    border-radius: rem-calc(4);
+
+    &:checked {
+      border-color: transparent;
+      background-color: transparent;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+      }
+
+      &:before {
+        z-index: 1;
+        height: rem-calc(23);
+        width: rem-calc(23);
+        border-radius: rem-calc(6);
+        margin-left: rem-calc(-4);
+        margin-top: rem-calc(-4);
+        background-color: $aquamarine;
+        background-image: linear-gradient(to right, rgba(190,199,218,1) 0%, rgba(182,224,227,1) 100%);
+      }
+
+      &:after {
+        z-index: 2;
+        height: rem-calc(15);
+        width: rem-calc(15);
+        border-radius: inherit;
+        background-color: $navy;
+        background-image: linear-gradient(320.43deg, $aquamarine 0%, $navy 100%);
+      }
+    }
+  }
+}
+
+label {
+  display: inline-flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: rem-calc(18);
+  font-weight: $text-bold;
+  line-height: 23px;
+  line-height: 1.27777777777778;
+}
+
+main {
+  min-height: 66vh;
+  article > *:last-child {
+    padding-bottom: 0;
+  }
+
+  @include screen-lg-up {
+    article > *:last-child {
+      padding-bottom: rem-calc(50);
+    }
+  }
+}
+
+input[type="range"],
+progress {
+  @include slider-bar-wrapper;
+}
+
+progress {
+  &::-webkit-progress-bar {
+    @include slider-bar;
+  }
+
+  &::-webkit-progress-value {
+    background: linear-gradient(to right, rgba($turquoise,0) 0%,rgba($turquoise,1) 10%,rgba($turquoise,1) 100%);
+  }
+
+  &::-moz-progress-bar {
+    @include slider-bar;
+  }
+}
+
+input[type="range"] {
+  &::-webkit-slider-thumb {
+    @include slider-thumb;
+  }
+
+  &::-moz-range-track {
+    @include slider-bar;
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+
+  &::after {
+    @include slider-bar;
+    position: absolute;
+    right: rem-calc(65);
+    left: rem-calc(55);
+    content: '';
+    width: calc(100% - #{rem-calc(120)});
+  }
+
+  + .value_text {
+    position: absolute;
+    display: block;
+    top: rem-calc(22);
+    font-size: rem-calc(18);
+    font-weight: $text-bold;
+    line-height: 23px;
+    line-height: 1.27777777777778;
+    color: $turquoise;
+  }
+}
+
+select {
+  @include input_base;
+  padding-right: 3.5rem;
+  background-image: url('../img/svg/chevron-down-w.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  @include screen-lg-up {
+    &:hover {
+      background-image: url('../img/svg/chevron-down-y.svg');
+    }
+  }
+}
+
+textarea {
+  @include input_base;
+
+  @include placeholder-text {
+    font-weight: $text-bold;
+    color: $ebony;
+  }
+}

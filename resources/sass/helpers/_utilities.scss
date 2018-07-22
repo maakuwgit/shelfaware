@@ -1,0 +1,330 @@
+/**
+ * Utilites & classes
+ */
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 15px 20px 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 20px 15px;
+}
+
+.block {
+  &.button {
+    display: block;
+  }
+  display: block;
+}
+
+.iblock {
+  &.button {
+    display: inline-block;
+  }
+  display: inline-block;
+}
+
+.flex {
+  &.button {
+    display: flex;
+  }
+  display: flex;
+}
+
+.iflex {
+  &.button {
+    display: inline-flex;
+  }
+  display: inline-flex;
+}
+
+.hide {
+  display: none !important;
+}
+
+%section-padding {
+  margin-top: $padding-xsmall;
+  padding-bottom: $padding-small;
+
+  @include screen-md-only {
+    margin-top: $padding-small;
+    padding-bottom: $padding-medium;
+  }
+
+  @include screen-lg-up {
+    margin-top: $padding-medium;
+    padding-bottom: $padding-large;
+  }
+}
+
+/* Font Weights */
+.text-bold,
+.h1.text-bold,
+.h2.text-bold,
+.h3.text-bold,
+.h4.text-bold,
+.h5.text-bold,
+.h6.text-bold {
+    font-weight: $text-bold;
+}
+
+.text-medium,
+.h1.text-medium,
+.h2.text-medium,
+.h3.text-medium,
+.h4.text-medium,
+.h5.text-medium,
+.h6.text-medium {
+  font-weight: $text-normal;
+}
+
+.text-normal,
+.h1.text-normal,
+.h2.text-normal,
+.h3.text-normal,
+.h4.text-normal,
+.h5.text-normal,
+.h6.text-normal {
+  font-weight: $text-light;
+  main.hero & {
+    font-weight: $text-light;
+  }
+}
+
+/* List Styles */
+.no-bullet {
+  list-style: none;
+  padding-left: initial;
+}
+
+.bullet {
+  list-style: disc;
+}
+
+/* Grid Styles */
+.relative {
+  position: relative;
+}
+
+.row--full {
+  margin: 0;
+}
+
+.col--full {
+  padding: 0;
+}
+
+%col {
+  position: relative;
+  min-height: 1px;
+  float: left;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Vertical align
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Clearfix
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+      content: " ";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Visually hide an element
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Overlay
+// Use in a pseudo element
+%overlay {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+// Cover
+// Makes videos or images work like background-size: cover;
+// as long as the parent is relative and has overflow: hidden
+%cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+ * Alignment styles
+ * ----------------------------------------------------------------------------
+ *
+ * Utility classes for adjusting content alignment
+ */
+
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vertical-center > * {
+  flex: 0 0 auto;
+}
+
+/**
+ * Text styles
+ * ----------------------------------------------------------------------------
+ *
+ * Utility classes for affecting text display
+ */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: $grey;
+}
+
+//theme specific colors
+a, address, dt, dd, h1, h2, h3, h4, h5, h6, li, p, span, small, td, th, time, ul,
+.thumbnail h3, .thumbnail h4, .thumbnail h5 {
+  &.black {
+    color: $black;
+  }
+  &.white {
+    color: $white;
+  }
+  &.blue {
+    color: $grey;
+  }
+  &.navy {
+    color: $grey;
+  }
+  &.royal {
+    color: $grey;
+  }
+  &.teal {
+    color: $aquamarine;
+  }
+  &.lavender {
+    color: $periwinkle;
+  }
+  &.grey {
+    color: $grey;
+  }
+}
+
+aside, article, main, div, header, footer, section, nav, main, menu, code, hr {
+  &.black {
+    background-color: $black;
+  }
+  &.white {
+    background-color: $white;
+  }
+  &.blue {
+    background-color: $grey;
+  }
+  &.navy {
+    background-color: $grey;
+  }
+  &.royal {
+    background-color: $grey;
+  }
+  &.teal {
+    background-color: $aquamarine;
+  }
+  &.lavender {
+    background-color: $periwinkle;
+  }
+  &.grey {
+    background-color: $grey;
+  }
+}
+
+[data-clickthrough] {
+  cursor: pointer;
+}
+
+[data-backgrounder] {
+  background-position: center;
+  background-size: cover;
+
+  .feature {
+    max-height: 66.66667vh;
+    overflow: hidden;
+
+    img {
+      opacity: 0;
+      height: 0;
+      display: inline;
+      width: 0;
+    }
+
+  }
+
+}
+
+[data-slider] {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}

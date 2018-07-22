@@ -1,0 +1,71 @@
+/**
+ * prefooter Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-prefooter {
+  position: relative;
+  overflow: hidden;
+  background-color: $navy;
+  background-image: linear-gradient(180deg, $navy 0%, $purple 100%);
+
+  .container {
+    min-height: 365px;
+    padding-top: $padding-small;
+    padding-bottom: $padding-small;
+
+    @include screen-lg-up {
+      padding-top: $padding-medium;
+      padding-bottom: $padding-medium;
+    }
+
+  }
+
+  .prefooter__title {
+    margin: auto;
+  }
+
+  .prefooter__content {
+
+  }
+
+  h2, h3, h4, h5, h6, p, li {
+    color: $white;
+  }
+
+  p {
+    margin-bottom: $padding-medium * 0.75;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include screen-xs {
+    button,
+    .btn {
+      margin-bottom: $padding-xsmall;
+    }
+  }
+
+  @include screen-xs-up {
+    button,
+    .btn {
+      display: inline-flex;
+      max-width: 50%;
+      flex: 1 0.5 auto;
+      justify-content: center;
+      margin-right: $padding-xsmall/2;
+
+      + button,
+      + .btn {
+        margin-right: auto;
+        margin-left: $padding-xsmall/2;
+      }
+    }
+  }
+
+}

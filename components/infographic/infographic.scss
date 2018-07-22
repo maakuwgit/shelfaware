@@ -1,0 +1,345 @@
+/**
+ * infographic Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-infographic {
+  @extend %section-padding;
+
+  .info__heading {
+    @extend %h2;
+
+    &:not(.h1) {
+      color: $white;
+    }
+
+  }
+
+  .info__content {
+    margin: auto;
+  }
+
+  .info__infographic {
+    position: relative;
+    list-style: none;
+    width: calc( 100% + #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding * -1;
+  }
+
+  .info__infographic__blurbs {
+
+    .info_blurb0,
+    .info_blurb1 {
+
+      &:after {
+        top: 100%;
+        left: 50%;
+        width: #{rem-calc(2)};
+        background-image: linear-gradient(rgba($navy, 0), $turquoise);
+      }
+
+      &:before {
+        bottom: rem-calc(-44);
+        left: 50%;
+        height: #{rem-calc(2)};
+        background-image: linear-gradient(90deg, $turquoise, rgba($navy, 0));
+      }
+
+    }
+
+    .info_blurb2,
+    .info_blurb3 {
+
+      &:after {
+        bottom: 100%;
+        left: 50%;
+        width: #{rem-calc(2)};
+        background-image: linear-gradient($turquoise, rgba($navy, 0));
+      }
+
+      &:before {
+        top: rem-calc(-44);
+        left: 50%;
+        height: #{rem-calc(2)};
+        background-image: linear-gradient(90deg, $turquoise, rgba($navy, 0));
+      }
+
+    }
+  }
+
+  .info__supertitle {
+    @extend %h1;
+  }
+
+  .info__infographic__blurb {
+    @extend %card;
+    position: relative;
+    overflow: visible;
+    min-height: initial;
+    margin-top: rem-calc(56);
+    margin-bottom: rem-calc(56);
+    padding-top: rem-calc(29);
+    padding-bottom: rem-calc(29);
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: rem-calc(18);
+      font-weight: $text-bold;
+      line-height: 23px;
+      line-height: 1.27777777777778;
+      color: $ebony;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      height: rem-calc(44);
+      width: 100%;
+      background-color: transparent;
+    }
+  }
+
+
+  @include screen-sm {
+
+    .info__infographic__blurbs {
+
+      .info_blurb0,
+      .info_blurb1,
+      .info_blurb2,
+      .info_blurb3 {
+        width: 100%;
+
+        &:after,
+        &:before {
+          content: initial;
+        }
+
+      }
+
+    }
+
+  }
+
+  @include screen-sm-only {
+    .info__infographic__blurbs {
+
+      &:first-child {
+
+        > :last-child {
+          transform: scaleX(-1);
+
+          p {
+            transform: scaleX(-1);
+          }
+
+        }
+
+      }
+
+      &:last-child {
+
+        > :last-child {
+          transform: scaleX(-1);
+
+          p {
+            transform: scaleX(-1);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include screen-sm-up {
+    .info__infographic {
+      padding-top: $padding-xsmall;
+    }
+  }
+
+  @include screen-lg-up {
+    .info__infographic {
+
+      .col {
+        padding-right: 0;
+        padding-left: 0;
+
+        &.end {
+          margin-right: calc(1/12*100%);
+        }
+      }
+
+    }
+  }
+
+  @include screen-md-up {
+
+    .info__infographic__blurb {
+      margin-top: rem-calc(104);
+      margin-bottom: rem-calc(104);
+    }
+
+    .info__infographic__blurbs {
+      &:last-child {
+
+        > :first-child,
+        > :last-child {
+          transform: scaleX(-1);
+
+          p {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+  }
+
+  @include screen-sm-only {
+
+    .info__infographic__blurbs {
+      display: flex;
+    }
+  }
+
+  @include screen-md {
+
+    .info__infographic__blurbs {
+
+      &.info_blurb2 {
+        &:after {
+          top: 100%;
+          bottom: initial;
+          background-image: linear-gradient(rgba($navy, 0), $turquoise);
+        }
+
+        &:before {
+          top: initial;
+          bottom: rem-calc(-104);
+          left: 0;
+          background-image: linear-gradient(90deg, rgba($navy, 0), $turquoise);
+        }
+      }
+
+      &.info_blurb3 {
+        &:before {
+          top: rem-calc(-104);
+        }
+      }
+
+      &.info_blurb1 {
+        &:before {
+          top: rem-calc(-104);
+          bottom: initial;
+          left: 0;
+          background-image: linear-gradient(90deg, rgba($navy, 0), $turquoise);
+        }
+
+        &:after {
+          top: initial;
+          bottom: 100%;
+          background-image: linear-gradient($turquoise, rgba($navy, 0));
+        }
+      }
+
+      &.info_blurb0 {
+
+        &:before {
+          bottom: rem-calc(-104);
+        }
+
+      }
+
+    }
+
+    .info__infographic__blurb {
+      max-width: 320px;
+      display: flex;
+      flex: 0 0.5 auto;
+      width: 50%;
+
+      &:before,
+      &:after {
+        width: 50%;
+        height: rem-calc(104);
+      }
+
+      &.info_blurb0,
+      &.info_blurb2 {
+        &:after,
+        &:before {
+          top: initial;
+          bottom: rem-calc(-104);
+        }
+      }
+
+      &.info_blurb1,
+      &.info_blurb3 {
+        &:before,
+        &:after {
+          bottom: initial;
+          top: rem-calc(-104);
+        }
+      }
+
+      &.info_blurb1:after {
+        transform: scaleY(-1);
+      }
+
+      &.info_blurb2:after {
+        transform: scaleY(-1);
+      }
+
+    }
+
+    .info__infographic__figure {
+      background-size: auto 350%;/*Dev Note: this hack can be removed when createive resizes the image*/
+      background-repeat: no-repeat;
+    }
+
+    [data-backgrounder] {
+      .info__infographic__feature {
+        display: block !important;
+
+        img {
+          max-width: 140px;
+          margin: auto;
+        }
+      }
+    }
+
+  }
+
+  .info__infographic__figure {
+    z-index: 1;
+    position: relative;
+  }
+
+  [data-backgrounder] {
+
+    .info__infographic__feature {
+      display: block !important;
+
+      img {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+  }
+
+  .info__infographic__svg {
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

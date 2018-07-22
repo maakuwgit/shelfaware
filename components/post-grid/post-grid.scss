@@ -1,0 +1,59 @@
+/**
+ * post-grid Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-post-grid {
+  @extend %section-padding;
+
+  .post-grid__heading {
+    margin-bottom: rem-calc(47);
+
+    &:not(.h1) {
+      color: $white;
+    }
+  }
+
+  .post-grid__supertitle {
+    @extend %h1;
+  }
+
+  .post-grid__title {
+    @extend %h2;
+  }
+
+  .post-grid__posts {
+    width: calc( 100% + #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding * -1;
+  }
+
+  .post-grid__post {
+    @extend %card;
+    padding-left: $padding-xsmall;
+    padding-right: $padding-xsmall;
+
+    .post-grid__post__title {
+      @extend %card__title;
+    }
+
+    .post-grid__post__body {
+      @extend %card__body;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .post-grid__post__feature__wrapper {
+      width: calc(100% + #{$padding-xsmall * 2});
+      min-height: 200px;
+      height: calc( 33.3334vw/2 - #{$padding-small} );
+      margin: #{$padding-small * -1} #{$padding-xsmall * -1} auto #{$padding-xsmall * -1};
+    }
+
+  }
+
+}

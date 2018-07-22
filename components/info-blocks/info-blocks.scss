@@ -1,0 +1,140 @@
+/**
+ * info-blocks Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-info-blocks {
+@extend %section-padding;
+
+  .info-block__heading {
+    @extend %h2;
+    &:not(.h1) {
+      color: $white;
+    }
+  }
+
+  .info-block__blocks {
+    position: relative;
+    list-style: none;
+    width: calc( 100% + #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding * -1;
+    padding-top: $padding-small;
+
+    @include screen-sm-up {
+      padding-top: $padding-medium;
+    }
+  }
+
+  .info-block__block {
+    margin-bottom: $padding-medium;
+
+    @include screen-sm-up {
+      margin-bottom: $padding-large;
+      &:nth-child(odd){
+        .info-block__block__content {
+          margin-right: calc(1/12*100%);
+        }
+
+        .info-block__block__figure {
+          order: 2;
+        }
+      }
+    }
+
+  }
+
+  .info-block__supertitle {
+    @extend %h1;
+  }
+
+  .info-block__content {
+    margin: auto auto #{$padding-medium} auto;
+
+    @include screen-md-up {
+      margin-bottom: $padding-large;
+    }
+  }
+
+  .info-block__block__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: $padding-xsmall;
+    margin-bottom: $padding-xsmall;
+
+    @include screen-md {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 550px;
+    }
+
+    @include screen-md-up {
+      margin-top: $padding-small;
+      margin-bottom: $padding-small;
+    }
+  }
+
+  [data-backgrounder] {
+
+    @include screen-md {
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      .info-block__block__feature img {
+        max-height: 300px;
+        margin: auto;
+      }
+    }
+
+    .info-block__block__feature {
+      display: block !important;
+
+      img {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  .info-block__block__svg {
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .info-block__block__icon {
+    @extend %card__icon;
+    margin-bottom: rem-calc(20);
+    background-color: $navy;
+    background-image: linear-gradient(225deg, $navy 0%, $purple 100%);
+  }
+
+  .info-block__block__title {
+    h2, h3, h4, h5, h6 {
+      margin-bottom: rem-calc(6);
+      margin-top: auto;
+      font-size: rem-calc(25);
+      font-weight: $text-bold;
+      line-height: 32px;
+      line-height: 1.28;
+      color: $white;
+    }
+  }
+
+  .info-block__block__caption {
+
+    p {
+      margin-top: 0;
+      font-weight: $text-normal;
+
+      &:last-of-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

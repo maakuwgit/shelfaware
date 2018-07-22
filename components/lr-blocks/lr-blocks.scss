@@ -1,0 +1,120 @@
+/**
+ * lr-blocks Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-lr-blocks {
+  position: relative;
+  @extend %section-padding;
+  padding-top: $padding-small;
+
+  @include screen-md-only {
+    padding-top: $padding-medium;
+  }
+
+  @include screen-lg-up {
+    padding-top: $padding-large;
+
+    .lr-blocks__figure {
+      top: $padding-large;
+      bottom: $padding-large;
+      border-top-left-radius: rem-calc(4);
+      border-bottom-left-radius: rem-calc(4);
+      box-shadow: 0 #{rem-calc(4)} #{rem-calc(10)} 0 rgba(0,0,0,0.4);
+    }
+
+    .lr-blocks__content {
+      min-height: 448px;
+    }
+
+    .lr-blocks__figure {
+      top: $padding-medium;
+      bottom: $padding-medium;
+    }
+
+  }
+
+  &.lefty {
+
+    .lr-blocks__content {
+      order: 2;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .lr-blocks__figure {
+      left: 0;
+      right: initial;
+      border-radius: 0;
+      border-top-right-radius: rem-calc(4);
+      border-bottom-right-radius: rem-calc(4);
+    }
+  }
+
+  .lr-blocks__figure {
+    top: $padding-medium;
+    bottom: $padding-medium;
+  }
+
+  .lr-blocks__content {
+    position: relative;
+    z-index: 1;
+    @include flexible(left, flex-start, column);
+    padding: $padding-small 0;
+
+    @include screen-lg-up  {
+      padding-top: $padding-medium;
+      padding-bottom: $padding-medium;
+
+      > * {
+        width: 100%;
+      }
+
+    }
+
+    h2, h3, h4, h5, h6, li, time {
+
+      &:not(.h1) {
+        color: $white;
+      }
+    }
+
+    p, li {
+      font-weight: $text-normal;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin: rem-calc(20) auto;
+    }
+
+    a:not(.btn) {
+      display: inline-block;
+      border-bottom: solid 1px $white;
+      font-weight: $text-normal;
+    }
+  }
+
+  .lr-blocks__figure {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+}

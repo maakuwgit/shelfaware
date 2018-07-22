@@ -1,0 +1,71 @@
+/**
+ * three-col-block Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-three-col-block {
+  @extend %section-padding;
+
+  .three-col-block__blocks {
+    @extend %card;
+    padding: #{rem-calc(50)} #{rem-calc(35)};
+  }
+
+  .three-col-block__block {
+    @include screen-sm {
+      padding-top: $padding-small;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    @include screen-md {
+      &:nth-child(3n){
+
+        &:last-child {
+          width: 100%;
+          max-width: initial;
+          padding-top: $padding-small;
+        }
+      }
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .three-col-block__block__icon {
+    @extend %card__icon;
+  }
+
+  .three-col-block__block__title {
+    h2, h3, h4, h5, h6 {
+      @extend %card__title;
+      margin-bottom: rem-calc(6);
+      &:first-child {
+        margin-top: auto;
+      }
+    }
+  }
+
+  .three-col-block__block__content {
+    @extend %card__body;
+  }
+
+  .three-col-block__block__caption {
+    p {
+      color: #676977;
+    }
+  }
+
+}

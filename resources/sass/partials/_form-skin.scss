@@ -1,0 +1,504 @@
+.form-skin {
+
+  .gform_footer {
+    display: flex;
+  }
+
+  .gform_button {
+    margin: 1rem auto auto auto;
+  }
+
+  .gform_wrapper {
+    @include flexible();
+    width: 100%;
+    flex: 0 1 auto;
+    margin-left: auto;
+    margin-right: 13%;
+    margin-top: rem-calc(114);
+    margin-bottom: $padding-medium;
+
+    @include screen-lg-up {
+      margin-top: rem-calc(228);
+      margin-bottom: $padding-large;
+    }
+
+    textarea {
+      height: rem-calc(150);
+    }
+
+    .gsection {
+      border: none;
+      padding: initial;
+      margin: auto;
+      clear: initial;
+    }
+
+    .gsection_description {
+      width: 100%;
+      flex: 0 1 auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: $padding-medium;
+      font-size: rem-calc(16);
+      font-weight: $text-normal;
+      line-height: 26px;
+      line-height: 1.625;
+      text-align: center;
+
+      @include screen-md {
+        padding-left: $grid-column-padding;
+        padding-right: $grid-column-padding;
+      }
+
+      @include screen-md-up {
+        width: 50%;
+        flex: 0 0.5 auto;
+      }
+    }
+
+    .gform_page_footer {
+      display: flex;
+      justify-content: center;
+      margin: #{rem-calc(96)} auto auto auto;
+      width: 100%;
+      border: initial;
+      padding: initial;
+      clear: both;
+    }
+  }
+
+  .gsection_title {
+    margin-bottom: rem-calc(7);
+    font-size: rem-calc(40);
+    line-height: 44px;
+    line-height: 1.1;
+    color: $white;
+    text-align: center;
+
+    @include screen-md {
+      padding-left: $grid-column-padding;
+      padding-right: $grid-column-padding;
+      text-align: center;
+    }
+  }
+
+  .gform_fields {
+    list-style: none;
+
+    .gfield {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex: 0 1 auto;
+      @include screen-lg-up {
+        padding-left: $grid-column-padding;
+        padding-right: $grid-column-padding;
+      }
+    }
+  }
+
+  .gfield_label {
+    display: none;
+  }
+
+  .gform_heading {
+    @extend %header;
+    font-weight: $text-light;
+    margin-bottom: rem-calc(28);
+  }
+
+  .gf_progressbar_wrapper {
+    display: none;
+  }
+
+  .gform_supertitle {
+    @extend %supertitle;
+  }
+
+  .gform_title {
+    @extend %title;
+  }
+
+  .gform_body {
+  }
+
+  .gform_description {
+    margin-bottom: $padding-small;
+    font-size: rem-calc(16);
+    color: #3f3f3f;
+    line-height: 25px;
+    line-height: 1.5625;
+
+    @include screen-lg-up {
+      margin-bottom: $padding-medium;
+    }
+  }
+
+
+  /**
+   * Default checkbox / radio input styles. Hide default input and make inputs
+   * display block 100% by default
+   */
+
+  //Page 2 has a boxed container and inputs that should be 50% width
+  #gform_fields_1_2 {
+
+    .gfield:not(.gsection) {
+      max-width: 66.666666667%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gfield_checkbox,
+    .gfield_radio {
+
+      @include screen-md-up {
+        width: calc(100% + #{$padding-xsmall});
+        margin-left: -1.25rem;
+      }
+
+      li {
+        flex: 1 1 100%;
+        margin: $padding-xsmall/2;
+
+        @include screen-md-up {
+          flex: 1 0.50 auto;
+          width: calc(50% - #{$padding-xsmall});
+        }
+      }
+    }
+  }
+
+  //Page 3 has the same container, but only text inputs whould be 50% width;
+  #gform_fields_1_5 {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include screen-md-up {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 50%;
+
+      .gfield:not(.gsection) {
+        width: 50%;
+      }
+    }
+
+    .gsection_description {
+      width: 100%;
+    }
+
+    .gfield:not(.gsection) {
+      margin-left: auto;
+      margin-right: auto;
+
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+
+  //All the other checkbox/radio inputs should be the same
+  .gfield_checkbox,
+  .gfield_radio {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    @include screen-md-up {
+      width: calc(100% + #{$padding-xsmall});
+      margin-left: -1.25rem;
+    }
+
+    li {
+      flex: 1 1 100%;
+      margin: $padding-xsmall/2;
+
+      @include screen-md-only {
+        flex: 1 0.50 auto;
+        width: calc(50% - #{$padding-xsmall});
+      }
+
+      @include screen-lg-up {
+        flex: 1 0.33 auto;
+        width: calc(33% - #{$padding-xsmall * 2});
+        margin: $padding-xsmall;
+      }
+
+      label {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 75px;
+        height: 100%;
+        padding: #{rem-calc(13)} #{rem-calc(10)} #{rem-calc(17)} #{rem-calc(10)};
+        border: none;
+        border-radius: rem-calc(4);
+        text-align: center;
+        color: $white;
+        background-image: linear-gradient(180deg, $navy 0%, $purple 100%);
+        box-shadow: 0 #{rem-calc(4)} #{rem-calc(10)} 0 rgba($black, 0.4);
+
+        @include screen-md-up {
+          min-height: 113px;
+          padding: #{rem-calc(43)} #{rem-calc(40)} #{rem-calc(47)} #{rem-calc(40)};
+        }
+
+        &:before {
+          content: initial;
+        }
+
+      }
+
+    }
+
+    /**
+     * extend visuallyhidden rather than display: none to hide the input to
+     * allow the input to still be accessible by screen readers and keyboards
+     */
+    input {
+      @extend %visuallyhidden;
+
+      /**
+       * give the focused inputs label a style so keyboard users can tell
+       * which radio / checkbox is focused. Accessibility win
+       */
+      &:hover ~ label,
+      &:checked ~ label {
+        color: #5252CD;
+        background-image: none;
+        background-color: $white;
+      }
+
+      &:focus ~ label {
+        color: $ebony;
+      }
+
+    }
+
+    /**
+     * use pseudo elements on the label for the custom checkbox / radio icons.
+     * the ::before here is the base styles for those. The icons are set
+     * further down
+     */
+    label {
+      position: relative;
+      display: block;
+      padding: 0.15em;
+      border: 1px solid transparent; //this prevents the label from jumping when the border shows on focus
+      transition: border 0.15s linear;
+
+      &::before {
+        content: '';
+        position: relative;
+        top: -0.05em; //baseline offset for icon
+        display: inline-block;
+        width: 1.75em;
+        height: 1.75em;
+        margin-right: 0.25em;
+        vertical-align: middle;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+    }
+  }
+
+  .range_wrapper {
+    @include slider-bar-wrapper
+    position: relative;
+    background-color: transparent;
+    box-shadow: initial;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include screen-md {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include screen-md-up {
+      input[type="range"] {
+        width: 100%;
+        max-width: initial;
+      }
+    }
+
+    .max_text,
+    .min_text {
+      position: absolute;
+      display: block;
+      top: calc(50% - #{rem-calc(10)});
+      font-size: rem-calc(18);
+      font-weight: $text-bold;
+      line-height: 23px;
+      line-height: 1.27777777777778;
+      color: $purple;
+    }
+
+    .min_text {
+      left: rem-calc(112);
+    }
+
+    .max_text {
+      right: rem-calc(100);
+    }
+
+    @include screen-lg {
+      .min_text {
+        left: rem-calc(73);
+      }
+
+      .max_text {
+        right: rem-calc(80);
+      }
+    }
+
+    @include screen-md {
+      .min_text {
+        left: rem-calc(57);
+      }
+
+      .max_text {
+        right: rem-calc(60);
+      }
+    }
+
+    @include screen-sm-only {
+      .max_text,
+      .min_text {
+        font-size: rem-calc(16);
+      }
+
+      .min_text {
+        left: rem-calc(50);
+      }
+
+      .max_text {
+        right: rem-calc(50);
+      }
+    }
+  }
+
+  .gfield_error {
+    input,
+    textarea {
+      border-color: $danger-color;
+    }
+  }
+
+  .ginput_container {
+
+    @include container-fixed;
+
+    &.ginput_container_textarea {
+      max-width: initial;
+    }
+
+    @include screen-lg {
+      padding-left: $padding-small;
+      padding-right: $padding-small;
+    }
+
+    .row {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.column {
+      flex-direction: column;
+    }
+  }
+
+  //Validation
+  .validation_error {
+    @include container-fixed;
+    color: $danger-color;
+    background-color: $danger-background;
+    padding: $padding-small;
+    margin-bottom: $padding-small;
+  }
+
+  .validation_message {
+    @include container-fixed;
+    color: $danger-color;
+  }
+
+  //Page Navigation
+  .gform_button,
+  .gform_previous_button,
+  .gform_next_button {
+    @extend %btn;
+    padding: 0;
+    min-width: initial;
+    width: rem-calc(45);
+    height: rem-calc(45);
+    margin: auto $padding-xsmall;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .gform_previous_button {
+    border-radius: 0 #{rem-calc(10)} 0 #{rem-calc(10)};
+    color: $turquoise;
+    background: $white url(../img/svg/triangle-left.svg) center no-repeat;
+  }
+
+  input[type="submit"],
+  .gform_next_button {
+    border-radius: #{rem-calc(10)} 0 #{rem-calc(10)} 0;
+    background-color: $turquoise;
+    background-image: url(../img/svg/triangle-right.svg), linear-gradient(45deg, $cerulean 0%, $turquoise 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .gform_confirmation_wrapper {
+    @extend %card;
+    position: absolute;
+    top: 25%;
+    right: $padding-xsmall;
+    left: $padding-xsmall;
+    display: flex;
+    width: calc(100% - #{$padding-xsmall * 2});
+    max-width: rem-calc(742);
+    height: calc(100% - #{$padding-xsmall * 2});
+    max-height: rem-calc(305);
+    padding: #{rem-calc(29)} #{rem-calc(33.5)};
+
+    @include screen-md-up {
+      top: calc(50% - #{rem-calc(152.5)});
+      left: calc(50% - #{rem-calc(371)});
+      right: initial;
+      width: rem-calc(742);
+      height: rem-calc(305);
+      padding: #{rem-calc(58)} #{rem-calc(67)};
+    }
+  }
+
+  .gform_confirmation_message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: $text-normal;
+
+    > br {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: rem-calc(10);
+      font-size: rem-calc(40);
+      color: $ebony;
+      line-height: 44px;
+      line-height: 1.1;
+    }
+  }
+
+}

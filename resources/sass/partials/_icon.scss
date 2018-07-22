@@ -1,0 +1,47 @@
+.icon {
+  display: inline-block;
+  width: rem-calc(26);
+  height: rem-calc(26);
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+//These are necessary
+//values come from icomoon
+.icon-LiftedLogic {
+  width: rem-calc(102);
+  position: absolute;
+  align-self: center;
+  right: rem-calc(20);
+  clip: rect(0, #{rem-calc(102)}, #{rem-calc(16)}, #{rem-calc(75)});
+  transform: scale(1.5);
+}
+
+.icon-google-plus {
+  width: 1.2861328125em;
+}
+
+.icon-facebook {
+  width: rem-calc(11);
+}
+
+.icon-instagram {
+  width: rem-calc(16);
+}
+
+.icon-pinterest {
+  width: 0.71875em;
+}
+
+.icon-twitter {
+  width: rem-calc(23);
+}
+
+.icon-youtube {
+  width: rem-calc(22);
+}
+
+.icon-download {
+  height: rem-calc(24);
+}

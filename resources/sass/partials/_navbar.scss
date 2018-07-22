@@ -1,0 +1,356 @@
+/**
+ * Navbar styles
+ */
+.navbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: #{rem-calc(22)} 0;
+  border: 0;
+  border-radius: 0;
+  background-color: $midnight;
+
+  @include screen-md-up {
+    padding: #{rem-calc(44)} 0;
+  }
+
+  &:not(.menu-open) {
+
+    .navbar-toggle__inner,
+    &.top .navbar-toggle__inner,
+    .navbar-toggle__inner::before,
+    &.top .navbar-toggle__inner::before,
+    .navbar-toggle__inner::after,
+    &.top .navbar-toggle__inner::after {
+      background-color: $turquoise;
+    }
+
+  }
+
+  &.top {
+    background-color: transparent;
+
+    .menu-item a:hover {
+      color: $turquoise;
+    }
+
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+  }
+
+  #primary-nav {
+
+    @include screen-md {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      overflow: hidden;
+      height: 100vh;
+      width: 100%;
+      background-color: $midnight;
+
+      ul {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .menu-item {
+          width: 100%;
+
+          .dropdown-menu {
+
+            &.collapsed {
+              display: none;
+            }
+
+            .dropdown-menu {
+              display: block;
+            }
+          }
+
+        }
+
+      }
+
+      .nav {
+        padding: rem-calc(143) $padding-small 0 $padding-small;
+      }
+
+      .menu-item {
+
+        &.btn {
+          margin: $padding-small 0;
+          padding: 0;
+        }
+
+        a {
+          padding: #{rem-calc(20)} 0;
+          font-size: rem-calc(18);
+          text-align: center;
+        }
+      }
+    }
+
+    .nav {
+      margin: auto 0 auto auto;
+    }
+  }
+
+  .menu-item {
+    &.btn {
+      margin-left: rem-calc(20);
+      padding-left: rem-calc(12);
+      padding-right: rem-calc(12);
+
+      a:hover {
+        color: $white;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 0 #{rem-calc(20)};
+      font-size: rem-calc(16);
+      font-weight: $text-bold;
+      line-height: 20px;
+      line-height: 1.25;
+      color: $white;
+
+      &:hover {
+        color: $aquamarine;
+      }
+
+    }
+
+  }
+
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  list-style: none;
+}
+
+.navbar-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 55px;
+}
+
+@include screen-lg-up {
+  .navbar-header {
+    flex-wrap: nowrap;
+  }
+}
+
+// navbar-toggle
+// ==================================================
+.navbar-toggle {
+  padding: 0 0 0 #{rem-calc(32)};
+  display: inline-flex;
+  cursor: pointer;
+  z-index: 1;
+
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+
+  // Normalize (<button>)
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  outline: none;
+  background-color: transparent;
+  background-image: initial;
+  border: 0;
+  border-color: #000;
+  min-width: initial;
+  margin: 0;
+  overflow: visible;
+
+  @include screen-md-up {
+    display: none;
+  }
+
+  .icon-bar {
+    background-color: $black;
+  }
+
+  .navbar.top & {
+    border-color: $white;
+
+    .icon-bar {
+      background-color: $white;
+    }
+
+  }
+
+  .navbar.top &:hover,
+  .navbar.top &:focus,
+  .navbar.top &.open:hover,
+  &.open:hover,
+  &:hover,
+  &:focus {
+    border-color: $aquamarine;
+    background-color: transparent;
+  }
+
+  .navbar.top:hover,
+  .navbar.top:focus,
+  &:hover,
+  &:focus {
+
+    .navbar-toggle__inner {
+
+      &:before,
+      &:after {
+        background-color: $aquamarine;
+      }
+
+    }
+
+  }
+
+  .navbar.top &:hover,
+  &:hover {
+
+    .navbar-toggle__inner {
+      background-color: $aquamarine;
+    }
+
+  }
+
+  &.open {
+    border-color: $white;
+
+    .navbar.top & {
+
+      .navbar-toggle__inner {
+        background-color: transparent;
+      }
+
+    }
+
+    .navbar-toggle__inner {
+      transform: rotate(90deg);
+      background-color: transparent;
+
+      transition: transform 0.1s 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+      background-color 0s 0.22s linear;
+
+      &::before,
+      &::after {
+        width: 42px;
+        height: 4px;
+        background-color: $white;
+      }
+
+      &::before {
+        top: -2px;
+        transform: rotate(-45deg);
+        transition: top 0.1s 0.12s ease-out,
+        transform 0.1s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(45deg);
+        transition: bottom 0.1s 0.12s ease-out,
+        transform 0.1s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+    }
+
+  }
+
+}
+
+.navbar-toggle__box {
+  width: 33px;
+  height: calc(3px * 3 + 9px * 2);
+  display: inline-block;
+  position: relative;
+}
+
+.navbar-toggle__inner {
+  display: block;
+  top: 50%;
+  margin-top: calc(3px / -2);
+  transition: transform 0.1s 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+              background-color 0s 0.1s linear;
+
+  &,
+  &::before,
+  &::after {
+    width: 33px;
+    height: 3px;
+    background-color: $navy;
+    border-radius: 0;
+    position: absolute;
+  }
+
+  .navbar.top & {
+
+    &,
+    &::before,
+    &::after {
+      background-color: $white;
+    }
+
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    top: calc( 12px * -1);
+    transition: top 0.1s 0.1s ease-in,
+    transform 0.1s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  &::after {
+    bottom: calc( 12px * -1);
+    transition: bottom 0.1s 0.1s ease-in,
+    transform 0.1s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+}
+
+body.locked {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#primary-nav {
+  z-index: 1;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.dropdown-menu {
+  flex-direction: column;
+  list-style: none;
+
+  li {
+    width: 100%;
+    text-align: left;
+  }
+
+}

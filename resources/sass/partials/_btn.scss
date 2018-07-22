@@ -1,0 +1,53 @@
+/**
+ * Button Styles
+ */
+%btn {
+  display: inline-block;
+  min-width: 176px;
+  border: none;
+  margin: auto 0;
+  padding: #{rem-calc(14)} #{rem-calc(38)};
+  border-radius: rem-calc(4);
+  background-color: $turquoise;
+  background: linear-gradient(45deg, $cerulean 0%, $turquoise 100%);
+  color: $white;
+  outline: none;
+  font-weight: $text-bold;
+  font-size: rem-calc(16);
+  line-height: 20px;
+  line-height: 1.25;
+  text-align: center;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus {
+    background-color: darken($turquoise, 5%);
+  }
+}
+
+%btn--secondary {
+  @extend %btn;
+  background-color: $apple;
+  background: linear-gradient(45deg, $shamrock 0%, $apple 100%);
+
+  &:hover, &:active, &:focus {
+    background-color: lighten($apple, 15%);
+  }
+}
+
+.btn,
+input[type="submit"],
+button {
+  @extend %btn;
+
+  &.btn--muted {
+    color: $grey;
+    svg {
+      fill: $grey;
+    }
+  }
+
+  &.btn--secondary {
+    @extend %btn--secondary;
+  }
+}

@@ -1,0 +1,45 @@
+/**
+ * Post
+ *   Used on single post pages
+ */
+.hentry {
+  padding-bottom: $padding-medium;
+
+  @include screen-lg-up {
+    padding-bottom: $padding-large;
+  }
+}
+
+.post {
+  padding-top: $padding-medium;
+  padding-bottom: $padding-medium;
+
+  @include screen-lg-up {
+    padding-top: $padding-large;
+    padding-bottom: $padding-large;
+  }
+
+}
+
+.post__hdg {
+}
+
+.post__content {
+
+  * {
+    color: $white;
+  }
+
+  ul, ol {
+    margin-left: rem-calc(18);
+  }
+}
+
+.post__title {
+  @extend %title;
+
+}
+
+.post__image {
+
+}

@@ -1,0 +1,151 @@
+/**
+ * Footer styles
+ */
+.footer {
+  background-color: $midnight;
+
+  * {
+    color: $white;
+  }
+
+  @include screen-sm-up {
+    .nav {
+      margin-left: rem-calc(60);
+    }
+  }
+
+  .menu-item {
+    color: $white;
+    line-height: 32px;
+    line-height: 2;
+    font-weight: $text-bold;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  .footer__logo__anchor {
+    display: flex;
+    width: rem-calc(123);
+    height: rem-calc(50);
+    font-size: rem-calc(26);
+    font-weight: $text-bold;
+    fill: $white;
+    color: $white;
+
+    a {
+      display: block;
+    }
+  }
+
+  .footer__top {
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(24);
+
+    @include screen-lg-up {
+      flex-direction: column;
+      padding-top: rem-calc(48);
+      padding-bottom: rem-calc(48);
+    }
+
+  }
+
+  .footer__social_wrap {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .footer__bottom {
+    padding-top: rem-calc(30);
+    padding-bottom: rem-calc(30);
+    border-top: solid 3px #212457;
+  }
+
+  .footer__copyright,
+  .footer__credits {
+    > * {
+      margin: auto;
+      font-weight: $text-light;
+      line-height: 20px;
+      line-height: 1.25;
+    }
+  }
+
+  .footer__ll_logo {
+    width: rem-calc(44);
+    height: rem-calc(20);
+  }
+
+  @include screen-lg-up {
+
+    .footer__logo_wrap,
+    .footer__copyright {
+      padding-left: 0;
+    }
+
+    .footer__navigation_wrap,
+    .footer__credits {
+      padding-right: 0;
+    }
+
+    .footer__credits {
+      text-align: right;
+
+      p {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @include screen-sm-only {
+   .footer__social_wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: $padding-small;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  @include screen-sm {
+    .footer__logo_wrap,
+    .footer__navigation_wrap,
+    .footer__social_wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: $padding-small;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .footer__logo_wrap,
+    .footer__navigation_wrap {
+      margin-bottom: $padding-xsmall;
+    }
+
+    .footer__disclaimer {
+      > * {
+        text-align: center;
+      }
+
+    }
+
+    .menu-item {
+      width: calc( 100% - #{$padding-xsmall * 2});
+      text-align: center;
+    }
+
+    .nav {
+      justify-content: center;
+    }
+
+  }
+}
+
+#menu-footer-navigation {
+  > .menu-item {
+    padding-left: rem-calc(20);
+    padding-right: rem-calc(20);
+  }
+}

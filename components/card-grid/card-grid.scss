@@ -1,0 +1,81 @@
+/**
+ * card-grid Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-card-grid {
+  @extend %section-padding;
+
+  .card-grid__heading {
+    &:not(.h1) {
+      color: $white;
+    }
+  }
+
+  .card-grid__cards {
+    list-style: none;
+    width: calc( 100% + #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding * -1;
+  }
+
+  .card-grid__card {
+    @extend %card;
+    width: calc( 100% - #{$grid-column-padding*2} );
+    height: rem-calc(120);
+    box-shadow: 0 #{rem-calc(4)} #{rem-calc(10)} 0 rgba($black,0.4);
+
+    @include screen-xs-to-lg {
+      flex: 0 0.5 auto;
+      width: calc( 50% - #{$grid-column-padding*2} );
+      max-width: 335px;
+      min-width: 280px;
+    }
+
+    @include screen-lg-only {
+      flex: 0 0.33 auto;
+      width: calc( 33.33334% - #{$grid-column-padding*2} );
+    }
+
+    @include screen-xl-only {
+      flex: 0 0.33 auto;
+      width: calc( 33.33334% - #{$grid-column-padding*2} );
+    }
+
+    @include screen-xxl-up {
+      flex: 0 0.25 auto;
+      width: calc( 25% - #{$grid-column-padding*2} );
+      height: rem-calc(350);
+    }
+
+  }
+
+  .card-grid__supertitle {
+    @extend %h1;
+  }
+
+  .card-grid__card__content {
+  }
+
+  .card-grid__content {
+    margin: auto auto #{rem-calc(45)} auto;
+  }
+
+  .card-grid__card__icon {
+    @extend %card__icon;
+  }
+
+  .card-grid__card__title {
+    h2, h3, h4, h5, h6 {
+      @extend %card__title;
+      margin-bottom: rem-calc(6);
+      margin-top: auto;
+    }
+  }
+
+  .card-grid__card__caption {
+    @extend %card__body;
+  }
+}

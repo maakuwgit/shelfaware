@@ -1,0 +1,73 @@
+/**
+ * Card
+ *
+ * Used width grid components ie: Blog Grid, Procedure Grid
+ * A (mostly) square box with a light shadow and gradient headline
+ */
+%card {
+  min-height: 335px;
+  margin: #{$padding-xsmall * 1.5} auto;
+  padding: #{rem-calc(27)};
+  border-radius: rem-calc(4);
+  background-color: $white;
+  box-shadow: 0 #{rem-calc(2)} #{rem-calc(8)} 0 rgba($black, 0.15);
+  overflow: hidden;
+}
+
+%card__body {
+
+  p {
+    margin-top: 0;
+    font-weight: $text-normal;
+    line-height: 26px;
+    line-height: 1.625;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+%card__title {
+  margin-top: rem-calc(20);
+  margin-bottom: rem-calc(4);
+  font-size: rem-calc(18);
+  font-weight: $text-bold;
+  color: #404040;
+  line-height: 23px;
+  line-height: 1.27777777777778;
+
+  a {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+%card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: rem-calc(45);
+  width: rem-calc(45);
+  margin-bottom: rem-calc(18);
+  border-radius: #{rem-calc(10)} 0 #{rem-calc(10)} 0;
+  background-color: $cerulean;
+  background-image: linear-gradient(45deg, $cerulean 0%, $turquoise 100%);
+}
+
+%card__cta {
+  display: inline-block;
+  margin-top: rem-calc(42);
+  border-bottom: solid 1px $navy;
+  color: $navy;
+  font-weight: $text-normal;
+}
+
+%card__nav {
+  margin: #{rem-calc(20)} auto auto auto;
+
+  .btn {
+    width: rem-calc(236);
+  }
+}

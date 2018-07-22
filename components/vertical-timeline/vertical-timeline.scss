@@ -1,0 +1,114 @@
+/**
+ * vertical-timeline Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-vertical-timeline {
+@extend %section-padding;
+
+  .vert-timeline__heading {
+    @extend %h2;
+    &:not(.h1) {
+      color: $white;
+    }
+  }
+
+  .vert-timeline__blocks {
+    position: relative;
+    list-style: none;
+    width: calc( 100% + #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding * -1;
+    padding-top: $padding-medium;
+
+    @include screen-sm-up {
+      padding-top: $padding-large;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: rem-calc(22.5) + $grid-column-padding;
+      width: 1px;
+      height: 100%;
+      margin: auto;
+      background-image: linear-gradient(180deg, $midnight 0%, $turquoise 20%, $turquoise 80%, $midnight 100%);
+
+      @include screen-sm-up {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .vert-timeline__block {
+    width: calc( 100% - #{$grid-column-padding*2} );
+    margin-left: $grid-column-padding;
+
+    @include screen-sm-up {
+      flex: 0 0.33 auto;
+      width: calc( 33.333334% - #{$grid-column-padding*2} );
+      margin-left: 58.333334%;
+      margin-right: 8.333334%;
+
+      &:nth-child(even){
+        margin-left: 8.333334%;
+        margin-right: 58.333334%;
+      }
+    }
+
+  }
+
+  .vert-timeline__supertitle {
+    @extend %h1;
+  }
+
+  .vert-timeline__content {
+    margin: auto auto #{rem-calc(45)} auto;
+  }
+
+  .vert-timeline__block__content {
+
+    @include screen-sm {
+      margin-left: calc(#{rem-calc(45) + $padding-small});
+    }
+
+  }
+
+  .vert-timeline__block__icon {
+    @extend %card__icon;
+    position: absolute;
+    z-index: 1;
+    background-color: $navy;
+    background-image: linear-gradient(225deg, $navy 0%, $purple 100%);
+
+    @include screen-sm-up {
+      right: calc(50% - #{rem-calc(22.5)});
+      left: calc(50% - #{rem-calc(22.5)});
+    }
+  }
+
+  .vert-timeline__block__title {
+    h2, h3, h4, h5, h6 {
+      margin-bottom: rem-calc(6);
+      margin-top: auto;
+      font-size: rem-calc(25);
+      font-weight: $text-bold;
+      line-height: 32px;
+      line-height: 1.28;
+      color: $white;
+    }
+  }
+
+  .vert-timeline__block__caption {
+    min-height: 130px;
+
+    p {
+      margin-top: 0;
+      font-weight: $text-normal;
+    }
+  }
+}

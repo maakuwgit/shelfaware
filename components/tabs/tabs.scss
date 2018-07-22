@@ -1,0 +1,151 @@
+/**
+ * tabs Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-tabs {
+  @extend %section-padding;
+
+  .tab__supertitle {
+    @extend %h1;
+  }
+
+  .tab__heading {
+    @extend %h2;
+    &:not(.h1) {
+      color: $white;
+    }
+  }
+
+  .tab__tab {
+    @include screen-sm {
+      padding-top: $padding-small;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    @include screen-md {
+      &:nth-child(3n){
+
+        &:last-child {
+          width: 100%;
+          max-width: initial;
+          padding-top: $padding-small;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .tab__content {
+    margin: auto auto #{rem-calc(45)} auto;
+  }
+
+  .tab__definition {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-top: $padding-medium;
+
+    @include screen-sm {
+      flex-direction: column;
+      padding-top: initial;
+    }
+  }
+
+  .tab__tabs__tab__title {
+
+    @include screen-sm {
+      margin-top: $padding-small;
+      font-size: rem-calc(20);
+      font-weight: 600;
+      line-height: 23px;
+      line-height: 1.27777777777778;
+      text-align: center;
+      color: $white;
+    }
+
+    @include screen-sm-up {
+      display: inline-block;
+      min-width: 176px;
+      border: none;
+      border-radius: rem-calc(4);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      margin: auto 0;
+      padding: #{rem-calc(14)} #{rem-calc(38)};
+      background-color: $turquoise;
+      background: linear-gradient(45deg, $cerulean 0%, $turquoise 100%);
+      color: $white;
+      outline: none;
+      font-weight: $text-bold;
+      font-size: rem-calc(16);
+      line-height: 20px;
+      line-height: 1.25;
+      text-align: center;
+      box-shadow: none;
+      cursor: pointer;
+
+      &:hover, &:active, &:focus {
+        background-color: darken($turquoise, 5%);
+      }
+
+      &.active {
+        background: $white;
+        color: $ebony;
+        cursor: initial;
+        pointer-events: none;
+      }
+
+    }
+
+  }
+
+  .tab__tabs__tab__description {
+    @extend %card;
+    padding: #{rem-calc(50)} #{rem-calc(35)};
+    box-shadow: 0 #{rem-calc(8)} #{rem-calc(10)} 0 rgba($black,0.4);
+
+    @include screen-sm-up {
+      position: absolute;
+      display: none;
+      margin-top: rem-calc(48);
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  .tab__tab__icon {
+    @extend %card__icon;
+  }
+
+  .tab__tab__title {
+    h2, h3, h4, h5, h6 {
+      @extend %card__title;
+      margin-bottom: rem-calc(6);
+
+      &:first-child {
+        margin-top: auto;
+      }
+    }
+  }
+
+  .tab__tab__caption {
+    @extend %card__body;
+
+    p {
+      color: #676977;
+    }
+  }
+}

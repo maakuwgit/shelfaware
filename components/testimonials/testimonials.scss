@@ -1,0 +1,109 @@
+/**
+ * testimonials Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-testimonials {
+  @extend %section-padding;
+
+  .testimonials__thumbnail {
+    width: rem-calc(45);
+    height: rem-calc(45);
+    margin-right: rem-calc(15);
+    border-radius: rem-calc(10) 0 rem-calc(10) 0;
+  }
+
+  .testimonials__heading {
+    margin-right: auto;
+    margin-bottom: rem-calc(75);
+    margin-left: auto;
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .testimonials__supertitle {
+    @extend %h1;
+  }
+
+  .testimonials__title {
+    @extend %h2;
+    color: $white;
+  }
+
+  .testimonials__testimonial {
+    display: none;
+    @extend %card;
+    min-height: initial;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: #{rem-calc(25)} #{rem-calc(34.5)};
+
+    @include screen-lg-up {
+      padding: #{rem-calc(50)} #{rem-calc(69)};
+    }
+
+    &.active {
+      display: block;
+    }
+
+    blockquote {
+      width: 100%;
+      margin-top: 0;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+      font-size: rem-calc(20);
+      font-weight: $text-bold;
+      color: $ebony;
+      line-height: 43px;
+      line-height: 1.72;
+
+      @include screen-lg-up {
+        font-size: rem-calc(25);
+      }
+
+      p {
+        color: currentColor;
+      }
+    }
+
+    *:last-child {
+      margin-bottom: auto;
+    }
+  }
+
+  .testimonials__list {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonials__description {
+    margin-bottom: rem-calc(28);
+  }
+
+  .testimonials__author {
+    margin-top: auto;
+    margin-bottom: 0;
+
+    .testimonials__author_name {
+      display: block;
+      font-size: rem-calc(18);
+      font-weight: $text-bold;
+      color: #0038A0;
+      line-height: 23px;
+      line-height: 1.27777777777778;
+    }
+
+    .testimonials__author_description {
+      line-height: 20px;
+      line-height: 1.25;
+    }
+  }
+
+}

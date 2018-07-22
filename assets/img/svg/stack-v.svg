@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="icon-stack-v" viewBox="0 0 24 24">
+  <title>Stack of Cards (Vertical)</title>
+  <g transform="translate(5, 2)" fill="#FFFFFF" fill-rule="nonzero">
+    <path d="M12.6,0 L3.24,0 C2.64353247,-3.65231026e-17 2.16,0.48353247 2.16,1.08 L2.16,1.44 L10.8,1.44 C11.59529,1.44 12.24,2.08470996 12.24,2.88 L12.24,15.84 L12.6,15.84 C13.1964675,15.84 13.68,15.3564675 13.68,14.76 L13.68,1.08 C13.68,0.48353247 13.1964675,3.65231026e-17 12.6,0 Z" fill-opacity="0.5"></path>
+    <rect x="0" y="2.16" width="11.52" height="15.84" rx="1.5"></rect>
+  </g>
+</svg>
